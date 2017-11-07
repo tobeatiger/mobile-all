@@ -1,0 +1,36 @@
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+html, body {height:100%;margin:0;overflow:hidden;
+font-family: "Helvetica", "Arial", "FreeSans", "Verdana", "Tahoma", "Lucida Sans", "Lucida Sans Unicode", "Luxi Sans", sans-serif;
+}
+.head {background-color:black; color:white; display:flex; height:40px;}
+.head label {display: flex; justify-content: center; align-items: center; height: 100%;}
+.head label.btn{width:0;position:relative;left:10px;color:blue;}
+.head label.title{flex: 9 0 0;}
+.main {background-color:#DDD;height:calc(100% - 40px);
+    position:absolute;left:0;width:calc(100%);transition:left 0.5s,width 0.5s;
+}
+.main.narrow {left:150px;width:calc(100% - 150px);}
+.main span {padding:10px;line-height:30px;}
+.leftPanel {
+    position: absolute;
+    height: calc(100% - 40px);
+    z-index: 5;
+    background-color: #AAA;
+    width: 150px;
+    transition: left 0.5s;
+    top: 40px;
+    overflow: hidden;
+    left: -150px;
+}
+.leftPanel.visible {left: 0;}
+.leftPanel ul {width: 150px;list-style: none outside none;margin: 0;padding: 0;}
+.leftPanel ul li {padding:2px 15px;border-bottom:1px solid #ddd;color:#000055;cursor:pointer;}

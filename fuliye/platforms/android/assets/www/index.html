@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <title>Fuliye</title>
+        <style>
+            body {
+                margin:0;
+                overflow: hidden;
+            }
+            h2 {
+                padding-bottom:8px;
+                margin:0;
+            }
+            .myFuliye {
+            }
+            .showTime {
+                color: darkred;
+                font-weight:bold;
+            }
+            .buttons {
+                margin-top: 1px;
+                margin-left: 4px;
+                text-align: center;
+            }
+            .buttons input {
+                 margin-right: 4px;
+                 border-radius: 3px;
+                 border: 1px solid #ddd;
+                 line-height: 18px;
+                 font-size: 12px;
+                 background-color: #eee;
+                 outline: none;
+             }
+            .buttons input:active, .buttons input.add:active {
+                background-color: #333;
+                color: #eee;
+            }
+            .buttons input.add {
+                color: darkblue;
+                font-weight: bold;
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+            .controlArea {
+                display: inline-block;
+                background-color:yellow;
+                padding:8px;
+                width:auto;
+                border:1px solid blue;
+            }
+            .mainBlock {
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+            .seriesTitle {
+                width: 144px;
+                display: inline-block;
+                padding-right: 8px;
+                text-align: right;
+            }
+            .aSeries {
+                background-color: #eee;
+                border-radius: 6px;
+                margin: 2px 4px;
+                /* padding-top: 4px; */
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            .subSeries {
+                height: 205px;
+                overflow-y: auto;
+            }
+            svg {
+                top: 3px;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script src="js/react.js"></script>
+        <script src="js/react-dom.js"></script>
+        <script src="js/browser.min.js"></script>
+        <script src="js/jquery-2.2.2.min.js"></script>
+        <script type="text/babel" src="js/fuliye.js"></script>
+        <!--<script src="js/bundle.js"></script>-->
+    </body>
+</html>

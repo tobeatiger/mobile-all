@@ -1,0 +1,46 @@
+@import "common.less";
+@import "./../../js/views/css/login.less";
+@import "./../../js/views/css/main.less";
+@import "./../../js/views/css/search-view.less";
+@import "./../../js/views/css/ww-forum-list.less";
+@import "./../../js/views/css/ww-create.less";
+@import "./../../js/views/css/ww-create-tags.less";
+@import "./../../js/views/css/ww-detail.less";
+@import "./../../js/views/css/comments-view.less";
+
+body {
+  font-size: 14px;
+}
+
+.ww-author {
+  height: auto;
+  margin-bottom: 5px;
+  position: relative;
+  line-height: 18px;
+  img {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #eee;
+  }
+  a {
+    font-size: 12px;
+    font-weight: bold;
+    color: #8f8f94;
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 2px;
+  }
+  .signature {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .subscribe {
+    position: absolute;
+    top: 8px;
+    right: 0;
+  }
+}

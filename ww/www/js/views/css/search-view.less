@@ -1,0 +1,58 @@
+@import "./../../../assets/css/common.less";
+
+#ww-search-view {
+  height: 100%;
+  .ww-search {
+    position: relative;
+    padding: 8px 12px;
+    margin: 0 0 10px;
+    background-color: @themeColor;
+    span {
+      position: absolute;
+      top: 17px;
+      left: 22px;
+      color: #555;
+      font-size: 18px;
+      &.icon-search {
+        &.loading {
+          -webkit-animation: spin 1s linear infinite;
+          -o-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+          height: 17px;
+          width: 18px;
+          &:before {
+            content: '\e97b';
+          }
+        }
+      }
+      &.action {
+        right: 12px;
+        padding: 8px 10px;
+        left: auto;
+        top: 9px;
+        &:active {
+          opacity: 0.6;
+        }
+      }
+    }
+    input {
+      margin: 0;
+      padding: 0 32px 0 34px;
+      font-size: 15px;
+      line-height: 33px;
+      border-color: @themeColor;
+    }
+  }
+  ul {
+    &.table-view {
+      height: auto;
+      max-height: calc(~"100%" - ~"67px");
+      overflow-y: auto;
+    }
+  }
+  .no-wws {
+    display: none;
+    text-align: center;
+    padding-top: 90px;
+  }
+}

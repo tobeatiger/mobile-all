@@ -1,0 +1,99 @@
+<div id="ww-detail-view" class="ww-detail-view" ng-cloak>
+    <header class="bar bar-nav">
+        <a class="icon icon-left-nav pull-left"></a>
+        <h1 class="title" ng-if="currentWW._showTitle">{{currentWW.title.substr(0,17)+(currentWW.title.length > 17 ? '...' : '')}}</h1>
+        <h1 class="title" ng-if="!currentWW._showTitle">为谏</h1>
+        <a class="icon icon-and-more-vertical pull-right"></a>
+    </header>
+    <div id="ww-detail-content" class="ww-detail-content" data-id="{{currentWW._id}}">
+        <div class="ww-scroll-loader-inner-wrap">
+            <div class="title-block">
+                <h4>{{currentWW.title}}</h4>
+                <div class="ww-tags-block">
+                    <a ng-repeat="wwTag in currentWW.wwTags">{{wwTag.name}}</a>
+                    <!--<button class="btn btn-outlined">+ 标签</button>-->
+                </div>
+            </div>
+            <div class="user-block">
+                <div class="ww-author">
+                    <img class="media-object pull-left" ng-if="currentWW.author" ng-src="{{context_root + currentWW.author.photo}}">
+                    <a>{{currentWW.author.nickName}}</a>
+                    <div class="signature">{{currentWW.author.signature}}</div>
+                    <!--<div class="subscribe">关注</div>-->
+                    <button class="subscribe btn btn-outlined">+ 关注</button>
+                </div>
+            </div>
+            <div class="content-block">
+                <p class="ww-item-content" ng-bind-html="currentWW.detail"></p>
+                <div class="ww-content-toggle icon icon-down"></div>
+                <div class="footer">
+            <span>
+                <div class="comments">
+                    <span class="icon icon-comments"></span>
+                    <span class="number">{{currentWW.comments.length}}</span>
+                </div>
+                <button class="btn btn-outlined btn-agree" ng-class="{agreed:currentWW.agreed}">
+                    <span class="icon icon-thumb-up"></span>
+                    <span class="badge badge-positive badge-inverted">{{currentWW.agree}}</span>
+                </button>
+                <button class="btn btn-outlined btn-watch" ng-class="{watched:currentWW.watched}">
+                    <span class="icon icon-eye"></span>
+                    <span class="badge badge-inverted">{{currentWW.watch}}</span>
+                </button>
+                <button class="collect btn btn-outlined" ng-class="{collected:currentWW.collected}">
+                    <span class="icon icon-folder-open"></span>
+                    收藏
+                </button>
+            </span>
+                </div>
+            </div>
+            <div class="article-block">
+                <div class="header">
+                    <span>{{currentWW.wwArticles.length}} 篇为论， {{currentWW.accept}} 人纳谏</span>
+                    <a class="icon icon-equalizer actions"></a>
+                </div>
+                <div class="article-list">
+                    <div class="empty" ng-show="currentWW.wwArticles.length == 0">没有内容</div>
+                    <div ng-show="currentWW.wwArticles.length > 0">
+                        <ul class="table-view">
+                            <li class="table-view-cell media"
+                                ng-repeat="articleItem in currentWW.wwArticles track by $index" data-id="{{articleItem._id}}" data-agree="{{articleItem.agree}}">
+                                <div class="ww-author">
+                                    <img class="media-object pull-left" ng-src="{{context_root + articleItem.author.photo}}">
+                                    <a>{{articleItem.author.nickName}}</a>
+                                </div>
+                                <div class="ww-content">
+                                    <h4 class="icon icon-comment-discussion">{{articleItem.title}}</h4>
+                                    <p ng-bind-html="articleItem.shortContent"></p>
+                                </div>
+                                <div class="ww-footer">
+                                    <div class="comments">
+                                        <span class="icon icon-comments-2"></span>
+                                        <span class="number">{{articleItem.comments.length}}</span>
+                                    </div>
+                                    <span class="ww-summary">
+                                        <a>赞 {{articleItem.agree}}</a>|<a>纳 {{articleItem.accept}}</a>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="bar bar-tab weijian">
+        <span class="compose-article">
+            <a class="icon icon-pencil2" style="font-size:16px;"></a>
+            为论
+        </span>
+        <span class="accept-ww">
+            <a class="icon icon-bell"></a>
+            纳谏
+        </span>
+        <span class="edit-ww" ng-if="currentWW.isCreator">
+            <a class="icon icon-pencil"></a>
+            编辑
+        </span>
+    </nav>
+</div>

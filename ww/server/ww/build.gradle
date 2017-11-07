@@ -1,0 +1,11 @@
+task copy(type: Copy) {
+    println "Copying..."
+    from "./../../www"
+    exclude "index.html"
+    exclude "require.js"
+    exclude "js/app.js"
+    exclude "lib/*.js"
+    exclude "assets/pics"
+    into "public"
+    println "Copy done"
+}

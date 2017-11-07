@@ -1,0 +1,13 @@
+<ul class="table-view">
+    {{#each this}}
+    <li class="table-view-cell media">
+        <a href="#employees/{{ id }}">
+            <img class="media-object pull-left" src="{{rootPath}}assets/pics/{{pic}}">
+            <div class="media-body">
+                {{firstName}} {{lastName}}
+                <p>{{title}}</p>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</ul>

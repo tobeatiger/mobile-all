@@ -1,0 +1,85 @@
+<div id="article-detail-view" class="ww-detail-view" ng-cloak>
+    <header class="bar bar-nav">
+        <a class="icon icon-left-nav pull-left"></a>
+        <h1 class="title" ng-if="currentArticle._showTitle">
+            {{currentArticle.title.substr(0,16)+(currentArticle.title.length > 16 ? '...' : '')}}
+        </h1>
+        <h1 class="title" ng-if="!currentArticle._showTitle">为论</h1>
+        <a class="icon icon-and-more-vertical pull-right"></a>
+    </header>
+    <div id="article-detail-content" class="ww-detail-content" data-id="{{currentArticle._id}}">
+        <div class="ww-scroll-loader-inner-wrap">
+            <div class="title-block">
+                <h4>{{currentArticle.title}}</h4>
+            </div>
+            <div class="user-block">
+                <div class="ww-author">
+                    <img class="media-object pull-left" ng-if="currentArticle.author" ng-src="{{context_root + currentArticle.author.photo}}">
+                    <a>{{currentArticle.author.nickName}}</a>
+                    <div class="signature">{{currentArticle.author.signature}}</div>
+                    <button class="subscribe btn btn-outlined">+ 关注</button>
+                </div>
+            </div>
+            <div class="content-block autoHeightContent">
+                <p class="ww-item-content" ng-bind-html="currentArticle.content"></p>
+                <!--<div class="footer">-->
+                    <!--<div class="link-to-ww">-->
+                        <!--<span class="icon icon-bell"><a href="#ww/detail/{{currentArticle.weijian._id}}">为谏</a></span>-->
+                    <!--</div>-->
+                    <!--<span>-->
+                        <!--<div class="comments">-->
+                            <!--<span class="icon icon-comments-2"></span>-->
+                            <!--<span class="number">{{currentArticle.comments.length}}</span>-->
+                        <!--</div>-->
+                        <!--<button class="btn btn-outlined btn-agree" ng-class="{agreed:currentArticle.articleAgreed}">-->
+                            <!--<span class="icon icon-thumb-up"></span>-->
+                            <!--<span class="badge badge-positive badge-inverted">{{currentArticle.agree}}</span>-->
+                        <!--</button>-->
+                        <!--<button class="btn btn-outlined btn-watch" ng-class="{watched:currentArticle.articleWatched}">-->
+                            <!--<span class="icon icon-eye"></span>-->
+                            <!--<span class="badge badge-inverted">{{currentArticle.watch}}</span>-->
+                        <!--</button>-->
+                        <!--<button class="collect btn btn-outlined" ng-class="{collected:currentArticle.articleCollected}">-->
+                            <!--<span class="icon icon-folder-open"></span>-->
+                            <!--收藏-->
+                        <!--</button>-->
+                    <!--</span>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <nav class="bar bar-tab">
+        <!--<span class="accept-article">-->
+            <!--<a class="icon icon-bell"></a>-->
+            <!--纳谏-->
+        <!--</span>-->
+        <!--<span class="edit-article" ng-if="currentArticle.isCreator">-->
+            <!--<a class="icon icon-pencil"></a>-->
+            <!--编辑-->
+        <!--</span>-->
+        <!--<span class="comment-article">-->
+            <!--<a class="icon icon-comments-2" style="font-size:19px"></a>-->
+            <!--评论-->
+        <!--</span>-->
+        <a class="tab-item accept-article">
+            <span class="icon icon-bell" style="font-size:18px;"></span>
+            <span class="tab-label">纳谏</span>
+        </a>
+        <a class="tab-item bookmark-article" ng-class="{active:currentArticle.articleCollected}">
+            <span class="icon icon-folder-open" style="font-size:18px;"></span>
+            <span class="tab-label">收藏</span>
+        </a>
+        <a class="tab-item agree-article" ng-class="{active:currentArticle.articleAgreed}">
+            <span class="icon icon-thumb-up-2" style="font-size:21px;top:1px;"></span>
+            <span class="tab-label">{{currentArticle.agree}}</span>
+        </a>
+        <a class="tab-item comment-article">
+            <span class="icon icon-comments-2" style="font-size:18px;"></span>
+            <span class="tab-label">{{currentArticle.comments.length}}</span>
+        </a>
+        <a class="tab-item edit-article" ng-if="currentArticle.isCreator">
+            <span class="icon icon-pencil" style="font-size:16px;"></span>
+            <span class="tab-label">编辑</span>
+        </a>
+    </nav>
+</div>

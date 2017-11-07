@@ -1,0 +1,19 @@
+<div id="article-create-view" class="ww-editor">
+    <header class="bar bar-nav">
+        <a class="icon icon-left-nav pull-left"></a>
+        <a class="icon icon-check btn-nav pull-right" id="article-save">
+        </a>
+        <h1 ng-if="action=='newArticle'" class="title">创建为论</h1>
+        <h1 ng-if="action=='editArticle'" class="title">修改为论</h1>
+    </header>
+    <div id="article-create-editor">
+        <div class="input-group">
+            <!--<input type="text" placeholder="标题" ng-if="action=='newArticle'" ng-model="newArticle.title">-->
+            <!--<input type="text" placeholder="标题" ng-if="action=='editArticle'" ng-model="editArticle.title">-->
+            <textarea placeholder="标题" ng-if="action=='newArticle'" ng-keyup="newArticleTitleChange()" ng-model="newArticle.title"></textarea>
+            <textarea placeholder="标题" ng-if="action=='editArticle'" ng-keyup="editArticleTitleChange()" ng-model="editArticle.title"></textarea>
+        </div>
+        <div id="article-create-quill-editor">
+        </div>
+    </div>
+</div>

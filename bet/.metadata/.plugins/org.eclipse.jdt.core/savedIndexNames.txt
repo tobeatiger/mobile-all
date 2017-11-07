@@ -1,0 +1,6 @@
+INDEX VERSION 1.126+E:\Mobile\bet\.metadata\.plugins\org.eclipse.jdt.core
+2623741039.index
+374132424.index
+618961506.index
+3229809678.index
+190715326.index

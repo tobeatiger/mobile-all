@@ -1,0 +1,20 @@
+<div id="ww-create-view" class="ww-editor">
+    <header class="bar bar-nav">
+        <a class="icon icon-left-nav pull-left"></a>
+        <a class="btn btn-link btn-nav pull-right" id="ww-next-step">
+            下一步
+        </a>
+        <h1 ng-if="action=='newWW'" class="title">创建为谏</h1>
+        <h1 ng-if="action=='editWW'" class="title">修改为谏</h1>
+    </header>
+    <div id="ww-create-editor">
+        <div class="input-group">
+            <!--<input type="text" placeholder="标题" ng-if="action=='newWW'" ng-model="newWW.title">-->
+            <!--<input type="text" placeholder="标题" ng-if="action=='editWW'" ng-model="editWW.title">-->
+            <textarea placeholder="标题" ng-if="action=='newWW'" ng-keyup="newWWTitleChange()" ng-model="newWW.title"></textarea>
+            <textarea placeholder="标题" ng-if="action=='editWW'" ng-keyup="editWWTitleChange()" ng-model="editWW.title"></textarea>
+        </div>
+        <div id="ww-create-quill-editor">
+        </div>
+    </div>
+</div>

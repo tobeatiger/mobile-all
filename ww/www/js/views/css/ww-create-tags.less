@@ -1,0 +1,65 @@
+@import "./../../../assets/css/common.less";
+
+/* ww create tags */
+#ww-create-view-tags {
+  .ww-tags-content {
+    position: relative;
+    top: 65px;
+    h4 {
+      font-size: 16px;
+      padding-left: 16px;
+      span {
+        font-size: 14px;
+        color: blue;
+      }
+    }
+
+    .card {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+      margin-top: 15px;
+    }
+
+    .table-view-cell {
+      font-size: 16px;
+      padding-left: 6px;
+      span.icon {
+        font-size: 16px;
+        margin-right: 5px;
+        color: green;
+      }
+    }
+
+    ul#ww-tag-question {
+      margin-top: 20px;
+      border-top: 1px solid green;
+      border-bottom: 1px solid green;
+    }
+
+    .toggle {
+      border-width: 1px;
+      width: 62px;
+      right: 2px;
+      &:before {
+        content: '关';
+      }
+      .toggle-handle {
+        top: 0;
+        left: 0;
+      }
+      &.active {
+        &:before {
+          content: '开';
+        }
+        .toggle-handle {
+          -webkit-transform: translate3d(33px, 0, 0);
+          -moz-transform: translate3d(33px, 0, 0);
+          -ms-transform: translate3d(33px, 0, 0);
+          -o-transform: translate3d(33px, 0, 0);
+          transform: translate3d(33px, 0, 0);
+        }
+      }
+    }
+  }
+}

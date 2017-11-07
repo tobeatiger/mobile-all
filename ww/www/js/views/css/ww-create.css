@@ -1,0 +1,70 @@
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.hidden {
+  display: none;
+}
+/* ww create */
+#ww-create-view,
+#article-create-view {
+  height: 100%;
+}
+#ww-create-view textarea,
+#article-create-view textarea {
+  overflow-y: auto;
+  resize: none;
+  height: 43px;
+  line-height: 26px;
+  padding-top: 10px;
+  -webkit-transition: padding-top 0.3s ease-out;
+  -moz-transition: padding-top 0.3s ease-out;
+  -ms-transition: padding-top 0.3s ease-out;
+  -o-transition: padding-top 0.3s ease-out;
+  transition: padding-top 0.3s ease-out;
+}
+#ww-create-view #ww-create-editor,
+#article-create-view #ww-create-editor,
+#ww-create-view #article-create-editor,
+#article-create-view #article-create-editor {
+  height: calc(100% - 54px);
+  position: relative;
+  top: 54px;
+}
+#ww-create-view .ql-toolbar,
+#article-create-view .ql-toolbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-right: 0;
+}
+#ww-create-view .ql-toolbar span,
+#article-create-view .ql-toolbar span {
+  width: 202px;
+  display: block;
+  margin: auto;
+}
+#ww-create-view .ql-toolbar button:not(:last-child),
+#article-create-view .ql-toolbar button:not(:last-child) {
+  margin-right: 30px;
+}
+#ww-create-quill-editor,
+#article-create-quill-editor {
+  /*margin-top: 14px;*/
+  border-bottom: 0;
+  border-right: 0;
+  /*border-top: 1px solid #ddd;*/
+  height: calc(100% - 93px);
+}

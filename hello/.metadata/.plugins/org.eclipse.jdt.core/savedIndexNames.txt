@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+E:\Mobile\hello\.metadata\.plugins\org.eclipse.jdt.core
+3784307145.index
+374132424.index
+2380175872.index

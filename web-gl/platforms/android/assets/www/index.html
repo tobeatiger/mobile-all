@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <title>Cube</title>
+        <script type="text/javascript" src="lib/virtualrubik.js"></script>
+        <script type="text/javascript">includeVirtualRubik("lib");</script>
+        <style>
+            button {
+                height: 34px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 0 10px;
+                outline: 0;
+                margin-right: 2px;
+            }
+            input {
+                margin: 15px 0 15px 10px;
+            }
+        </style>
+    </head>
+    <body style="margin:0;background-color:#000;">
+        <canvas id="canvas1" class="virtualrubik" style="background-color: #000; margin-bottom: 10px;"
+                width="360" height="360"></canvas>
+        <p style="text-align:center;width:360px;position:fixed;bottom:50px;color:#fff;line-height:45px;">
+            <button type="button" onclick="document.getElementById('canvas1').virtualrubik.scramble(21,!event.altKey&&!event.ctrlKey);">拆散</button>
+            <button type="button" onclick="document.getElementById('canvas1').virtualrubik.play();">自解</button>
+            <button type="button" onclick="document.getElementById('canvas1').virtualrubik.solveStep();">步骤</button>
+            <button type="button" onclick="document.getElementById('canvas1').virtualrubik.explodeToggle();">解剖</button>
+            <button type="button" onclick="document.getElementById('canvas1').virtualrubik.loukong();">镂空</button>
+            <br/>
+            <input type="checkbox"
+                   onchange="document.getElementById('canvas1').virtualrubik.setAutorotate(this.checked);"/>
+            <span style="position:relative;top:-2px;">旋转</span>
+            <br/>
+            <button type="button" onclick="takePicture('a')">照片</button>
+            <button type="button" onclick="takePicture('p')">拍照</button>
+        </p>
+        <script src="cordova.js"></script>
+        <img id="stickerBase" style="display:none" src="images/RubiksCube_1024.gif" />
+        <img id="stickerPhoto" style="display:none" src="images/dbo.jpg" />
+        <canvas id="stickerCompositor" style="display:none" width="1024" height="1024"></canvas>
+        <script>
+            window.onload = function () {
+                usePhoto();
+            };
+            function usePhoto (data) {
+                var c = document.getElementById('stickerCompositor');
+                var ctx = c.getContext('2d');
+                ctx.drawImage(document.getElementById('stickerBase'), 0, 0);
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 336, 336, 336);
+                var photo = document.getElementById('stickerPhoto');
+                if(data) {
+                    photo.src = data;
+                }
+                for(var i=0;i<3;i++) {
+                    for(var j=0;j<3;j++) {
+                        ctx.drawImage(photo, 336+i*112, 336+j*112, 112, 112);
+                    }
+                }
+                //document.getElementById('stickerBase').src = c.toDataURL('image/jpeg');
+                //document.getElementById('stickerBase').style.display = 'block';
+                document.getElementById('canvas1').setAttribute('stickersImage',c.toDataURL('image/jpeg'));
+                attachVirtualRubik();
+            }
+            function takePicture (param) {
+                if(!navigator || !navigator.camera) {
+                    alert('Can not take picture');
+                }
+                var options = {
+                    quality: 100,
+                    allowEdit: true,
+                    destinationType: Camera.DestinationType.DATA_URL,
+                    sourceType: Camera.PictureSourceType.CAMERA, //SAVEDPHOTOALBUM， PHOTOLIBRARY
+                    encodingType: Camera.EncodingType.JPEG
+                };
+                if(param == 'a') {
+                    options.sourceType = Camera.PictureSourceType.PHOTOLIBRARY;
+                }
+                navigator.camera.getPicture(function cameraSuccess(imageUri) {
+                    usePhoto('data:image/jpg;base64,'+imageUri);
+                }, function cameraError(error) {
+                }, options);
+            }
+
+        </script>
+    </body>
+</html>

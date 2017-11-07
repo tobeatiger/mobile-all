@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ><!-- InstanceBegin template="/Templates/article960_12.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>WebGL Rubik's Cube</title>
+    <script type="text/javascript" src="lib/virtualrubik.js"></script>
+    <script type="text/javascript">includeVirtualRubik("lib");attachVirtualRubik();</script>
+    <!-- InstanceEndEditable -->
+    <link rel="stylesheet" type="text/css" href="../style/reset.css">
+    <link rel="stylesheet" type="text/css" href="../style/960.css">
+    <link rel="stylesheet" type="text/css" href="../style/text.css">
+    <link rel="stylesheet" type="text/css" href="../style/layout.css">
+    <!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable --><!-- InstanceParam name="mainNav" type="boolean" value="true" -->
+</head>
+<body>
+<div class="container_12">
+
+    <nav>
+        <div class="mainNav" id="mainNav">
+            <div class="logo" id="logo"><a href="http://www.randelshofer.ch">www.randelshofer.ch</a></div>
+            <div class="nav1" id="mainNav1">
+                <!-- InstanceBeginEditable name="mainNav1" -->
+                <ul>
+                    <li ><a href="../../index.html">Home</a></li>
+                    <li><a href="../../fun.html">Fun</a></li><li class="selected"><a href="../../science.html">Science</a></li><li ><a href="../../software.html">Software</a></li>
+                </ul>
+                <!-- InstanceEndEditable -->
+            </div>
+            <div class="nav2" id="mainNav2">
+                <!-- InstanceBeginEditable name="mainNav2" -->
+                <ul class="breadcrumbs">
+                    <li ><a href="../../science.html">Overview</a></li>
+                    <li class="selected"><a href="index.html">WebGL Rubik's Cube</a></li>
+                </ul>
+                <!-- InstanceEndEditable -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="grid_12">
+        <header><div class="header1">
+            <!-- InstanceBeginEditable name="header" -->
+            <h1>WebGL Rubik's Cube</h1>
+            <!-- InstanceEndEditable -->
+        </div></header>
+    </div>
+    <div class="parent_9">
+        <!-- InstanceBeginEditable name="article" -->
+        <div class="grid_6">
+            <canvas id="canvas1" class="virtualrubik" style="border: 1px #999999 solid" width="460" height="460" stickersImage="images/RubiksCube_1024.gif"></canvas>
+            <p>
+                <button type="button"
+                        onclick="document.getElementById('canvas1').virtualrubik.reset();">Reset</button>
+                <button type="button"
+                        onclick="document.getElementById('canvas1').virtualrubik.scramble(21,!event.altKey&&!event.ctrlKey);">Scramble</button>
+                <button type="button"
+                        onclick="document.getElementById('canvas1').virtualrubik.wobble();">Wobble</button>
+                <button type="button"
+                        onclick="document.getElementById('canvas1').virtualrubik.explode();">Explode</button>
+                <input type="checkbox"
+                       onchange="document.getElementById('canvas1').virtualrubik.setAutorotate(this.checked);">
+                Rotate</input>     </p>
+        </div>
+        <div class="grid_3">
+            <div class="article1">
+                <p ><strong>To twist the cube:</strong><br>Drag a part into the desired direction or  click on a part.</p>
+                <ul>
+                    <li>Click twists into clockwise direction.</li>
+                    <li>Alt+Click or Ctrl+Click twists into the opposite direction.</li>
+                    <li>Shift+Click twists by 180°.</li>
+                </ul>
+                <p ><strong>To rotate the cube:</strong><br>Drag the area behind the cube into the desired direction.</p>
+                <p>&nbsp;</p>
+                <div class="footer2">
+                    <p>This  applet has been programmed in JavaScript and <a href="http://www.khronos.org/webgl/">WebGL</a>.<br>
+                        <br>
+                        WebGL Rubik's Cube is © Werner Randelshofer. Parts of the code (as marked) are from the <a href="http://khronos.org/webgl/wiki/Demo_Repository">WebGL demo repository.</a> This code is copyright by Apple Inc. and by Google Inc. and is used under permission.<br>
+                        <br>
+                        If the applet does not display, you may need to use a different browser. <br>
+                        At the time of writing (August 2011) WebGL is supported in Chrome 12, Firefox 5 and in Safari 5.1*.</p>
+                    <p>*You may have to enable WebGL in Safari. See this <a href="http://fairerplatform.com/2011/05/new-in-os-x-lion-safari-5-1-brings-webgl-do-not-track-and-more/">blog article.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="grid_9">
+            <!-- AddThis -->
+            <!--script language="javascript">
+              writeAddThis();
+            </script-->
+        </div>
+
+        <!-- InstanceEndEditable -->
+    </div>
+    <div class="grid_3">
+        <!-- InstanceBeginEditable name="aside" -->
+        <div class="aside1">
+            <h3 class="plinedividertriple">Download</h3>
+            <p ><a href="files/rubikscube.zip" class="download">rubikscube.zip</a> (80 KB)</p>
+            <p class="footer2" > Creative Commons Attribution Non-Commercial 3.0</p>
+        </div><div class="aside2">
+        <h3 class="plinedividertriple">External Links</h3>
+        <p class="semiparagraph"><a href="http://www.khronos.org/webgl/">WebGL documentation</a> at Khronos.org</p>
+        <p class="semiparagraph"><a href="http://khronos.org/webgl/wiki/Demo_Repository">WebGL demo repository.</a></p>
+    </div>
+        <!-- InstanceEndEditable --></div>
+    <div class="grid_12"><footer>
+        <div class="footer1"><!-- InstanceBeginEditable name="footer" -->
+            Copyright &copy; Werner Randelshofer. All Rights Reserved.
+            <!-- InstanceEndEditable --></div>
+    </footer></div>
+    <div class="clear"></div>
+</div>
+</body>
+<!-- InstanceEnd --></html>

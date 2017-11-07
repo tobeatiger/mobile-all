@@ -1,0 +1,24 @@
+<ul class="table-view">
+    <li class="table-view-cell media" ng-repeat="wwItem in wwItems track by $index" data-id="{{wwItem._id}}">
+        <div class="ww-author">
+            <img class="media-object pull-left" ng-src="{{context_root + wwItem.author.photo}}">
+            <a>{{wwItem.author.nickName}}</a>
+        </div>
+        <div class="ww-content">
+            <h4>{{wwItem.title}}</h4>
+            <p ng-bind-html="wwItem.shortDetail"></p>
+        </div>
+        <div class="ww-footer">
+            <span class="ww-summary">
+                <a>赞 {{wwItem.agree}}</a>|<a>纳 {{wwItem.accept}}</a>|<a>论 {{wwItem.wwArticles.length}}</a>
+            </span>
+            <span class="ww-tags">
+                <a ng-repeat="wwTag in wwItem.wwTags">{{wwTag.name}}</a>
+            </span>
+        </div>
+    </li>
+</ul>
+<div class="no-wws" style="display: block;">
+    <h4>好尴尬，出了点问题</h4>
+    <p><a class="reload-ww">重新加载</a></p>
+</div>

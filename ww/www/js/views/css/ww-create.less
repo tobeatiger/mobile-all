@@ -1,0 +1,45 @@
+@import "./../../../assets/css/common.less";
+
+/* ww create */
+#ww-create-view, #article-create-view {
+  height: 100%;
+  textarea {
+    overflow-y:auto;
+    resize:none;
+    height:43px;
+    line-height:26px;
+    padding-top:10px;
+    -webkit-transition: padding-top 0.3s ease-out;
+    -moz-transition: padding-top 0.3s ease-out;
+    -ms-transition: padding-top 0.3s ease-out;
+    -o-transition: padding-top 0.3s ease-out;
+    transition: padding-top 0.3s ease-out;
+  }
+  #ww-create-editor, #article-create-editor {
+    height: calc(~"100%" - ~"54px");
+    position: relative;
+    top: 54px;
+  }
+  .ql-toolbar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-right: 0;
+    span {
+      width: 202px;
+      display: block;
+      margin: auto;
+    }
+    button:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+#ww-create-quill-editor, #article-create-quill-editor {
+  /*margin-top: 14px;*/
+  border-bottom: 0;
+  border-right: 0;
+  /*border-top: 1px solid #ddd;*/
+  height: calc(~"100%" - ~"93px");
+}

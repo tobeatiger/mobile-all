@@ -1,0 +1,42 @@
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.hidden {
+  display: none;
+}
+.ww-main .segmented-control .control-item.active {
+  background-color: #428bca;
+  color: white;
+}
+.ww-home-bar .icon-list-numbered:before {
+  bottom: -2px;
+  position: relative;
+}
+.ww-home-bar .icon-bell:before {
+  content: '\e951';
+  position: relative;
+  bottom: -1px;
+}
+.ww-home-bar .icon-bubbles:before {
+  position: relative;
+  bottom: -1px;
+}
+.ww-container {
+  height: calc(100% - 94px);
+  position: fixed;
+  top: 44px;
+  width: 100%;
+}

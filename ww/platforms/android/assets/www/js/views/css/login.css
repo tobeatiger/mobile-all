@@ -1,0 +1,41 @@
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.hidden {
+  display: none;
+}
+#login #login-form {
+  position: relative;
+  top: 45px;
+}
+#login #btn-login {
+  margin-top: 10px;
+}
+#login #btn-sign-up {
+  margin-bottom: 18px;
+}
+#login #login-message {
+  text-align: center;
+  color: darkred;
+  margin: 0;
+  padding: 10px 0 0;
+  display: none;
+}
+#login a {
+  float: right;
+  padding-right: 10px;
+  font-size: 14px;
+}

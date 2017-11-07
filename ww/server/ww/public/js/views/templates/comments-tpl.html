@@ -1,0 +1,49 @@
+<div id="comments-view" class="comments-view" ng-cloak>
+    <header class="bar bar-nav">
+        <a class="icon icon-left-nav pull-left"></a>
+        <h1 class="title">评论</h1>
+        <a class="icon icon-equalizer pull-right"></a>
+    </header>
+    <div class="container">
+        <div class="ww-scroll-loader-inner-wrap">
+            <ul class="comment-list">
+                <li class="comment-item" ng-repeat="comment in commentList track by $index" data-id="{{comment._id}}" data-agree="{{comment.agree}}">
+                    <img class="pull-left userPhoto" ng-src="{{context_root + comment.author.photo}}">
+                    <div>
+                        <span class="userName" data-user-id="comment.author.userId">{{comment.author.nickName}}</span>
+                        <!--<p class="comment">{{comment.content}}</p>-->
+                        <p class="comment" ng-bind-html="comment.content"></p>
+                        <ul class="comment-list comment-sub-list hidden" ng-if="comment.subComments">
+                            <li class="comment-item comment-sub-item" ng-repeat="subcomment in comment.subComments track by $index" data-id="{{subcomment._id}}">
+                                <div>
+                                    <div class="sub-comment-header">
+                                        <span class="userName" data-user-id="subcomment.author.userId">{{subcomment.author.nickName}}</span>
+                                        <span class="icon icon-thumb-up-2 agree" ng-class="{active: subcomment.agreed}"><span>{{subcomment.agree}}</span></span>
+                                        <span class="createTime">{{subcomment.createTime | date: 'MM/dd/yy - hh:mm'}}</span>
+                                    </div>
+                                    <!--<p class="comment">{{subcomment.content}}</p>-->
+                                    <p class="comment" ng-bind-html="subcomment.content"></p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="footer">
+                            <span class="createTime">{{comment.createTime | date: 'MM/dd/yy - hh:mm'}}</span>
+                            <span class="icon icon-thumb-up-2 agree" ng-class="{active: comment.agreed}"><span>{{comment.agree}}</span></span>
+                            <span ng-if="comment.subComments" style="color:#428bca;" class="toggle-area"><a class="sub-comment-toggle">展开</a>{{comment.subComments.length}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="no-items hidden" ng-hide="commentList.length">
+            没有评论
+        </div>
+    </div>
+    <nav class="bar bar-tab">
+        <div class="comment-input">
+            <!--<input type="text" placeholder="写评论" ng-model="wwAddComment"/>-->
+            <textarea placeholder="写评论" ng-keyup="commentInputChange()" ng-model="wwAddComment"></textarea>
+            <span class="icon icon-circle-right addComment" ng-show="wwAddComment"></span>
+        </div>
+    </nav>
+</div>

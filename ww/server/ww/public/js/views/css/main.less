@@ -1,0 +1,31 @@
+@import "./../../../assets/css/common.less";
+
+.ww-main {
+  .segmented-control .control-item.active {
+    background-color: @themeColor;
+    color: white;
+  }
+}
+
+.ww-home-bar {
+  .icon-list-numbered:before {
+    bottom: -2px;
+    position: relative;
+  }
+  .icon-bell:before {
+    content: '\e951';
+    position: relative;
+    bottom: -1px;
+  }
+  .icon-bubbles:before {
+    position: relative;
+    bottom: -1px;
+  }
+}
+
+.ww-container {
+  height: calc(~"100%" - ~"94px");
+  position: fixed;
+  top: 44px;
+  width: 100%;
+}

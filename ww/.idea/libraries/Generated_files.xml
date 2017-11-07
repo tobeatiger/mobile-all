@@ -1,0 +1,51 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/www/js/ViewController.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/views/ArticleCreateView.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/views/LoginView.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/views/CommentsView.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/app.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/services/ArticleService.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/services/WWService.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/services/memory/ArticleService.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/views/ArticleDetailView.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/services/LoginService.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/services/memory/LoginService.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/services/memory/WWService.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/views/WWReLunListView.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/views/WWForumListView.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/views/WWCreateTagsView.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/views/MainView.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/views/WWDetailView.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/views/SearchView.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/views/WWCreateView.min.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/www/ui-lib/components/components-jq.min.js" />
+      <root url="file://$PROJECT_DIR$/www/ui-lib/components/components-jq.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/ViewController.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/views/ArticleCreateView.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/views/LoginView.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/views/CommentsView.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/app.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/services/ArticleService.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/services/WWService.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/services/memory/ArticleService.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/views/ArticleDetailView.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/services/LoginService.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/services/memory/LoginService.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/services/memory/WWService.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/views/WWReLunListView.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/views/WWForumListView.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/views/WWCreateTagsView.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/views/MainView.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/views/WWDetailView.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/views/SearchView.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/views/WWCreateView.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
