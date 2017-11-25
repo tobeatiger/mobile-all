@@ -72,7 +72,7 @@ router.queryArticles = function (params, cb) {
         }
     }
 
-    query.sort(sorting).limit(countPerPage).populate('author').exec(function (err, docs) {
+    query.sort(sorting).limit(parseInt(countPerPage)).populate('author').exec(function (err, docs) {
         if(err) {
             cb(err);
         } else {

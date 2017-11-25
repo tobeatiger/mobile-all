@@ -3,6 +3,7 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/www/js/ViewController.min.js" />
+        <item url="file://$PROJECT_DIR$/www/js/app_bak.min.js" />
         <item url="file://$PROJECT_DIR$/www/js/views/ArticleCreateView.min.js" />
         <item url="file://$PROJECT_DIR$/www/js/views/LoginView.min.js" />
         <item url="file://$PROJECT_DIR$/www/js/views/CommentsView.min.js" />
@@ -27,6 +28,7 @@
       <root url="file://$PROJECT_DIR$/www/ui-lib/components/components-jq.min.js" />
       <root url="file://$PROJECT_DIR$/www/ui-lib/components/components-jq.min.js" />
       <root url="file://$PROJECT_DIR$/www/js/ViewController.min.js" />
+      <root url="file://$PROJECT_DIR$/www/js/app_bak.min.js" />
       <root url="file://$PROJECT_DIR$/www/js/views/ArticleCreateView.min.js" />
       <root url="file://$PROJECT_DIR$/www/js/views/LoginView.min.js" />
       <root url="file://$PROJECT_DIR$/www/js/views/CommentsView.min.js" />

@@ -463,7 +463,7 @@ router.get('/list', function (req, res, next) {
     if(req.query.lastItemUpdateTime) {
         q.where('updateTime').lt(new Date(req.query.lastItemUpdateTime));
         //q.where('updateTime').lte(new Date(req.query.lastItemUpdateTime));
-        q.limit(req.query.countPerPage || 20);
+        q.limit((req.query.countPerPage && parseInt(req.query.countPerPage)) || 20);
     } else if(req.query.firstItemUpdateTime) {
         q.where('updateTime').gt(new Date(req.query.firstItemUpdateTime));
     }

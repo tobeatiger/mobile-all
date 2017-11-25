@@ -158,7 +158,7 @@
                     function (results) {
                         if(results.buttonIndex == 2) {
                             // ok
-                            www_root = 'http://' + results.input1 + ':3005/web';
+                            www_root = 'http://' + results.input1 + ':3000/web';
                         } else {
                             // cancel
                             www_root = '.';
@@ -181,7 +181,7 @@
                     '118.89.30.45'
                 );
             } else {
-                www_root = 'http://118.89.30.45:3005/web';  // TODO: use prompt in testing mode
+                www_root = 'http://localhost:3000/web';  // TODO: use prompt in testing mode
                 if(www_root == '.') { //testing only  // TODO: use prompt in testing mode
                     requirejs.config({
                         paths: {
