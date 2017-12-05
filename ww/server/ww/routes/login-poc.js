@@ -92,6 +92,39 @@ router.post('/ww-login', function(req, res, next) {
     }
 });
 
+// POST: http(s)://host:port/login/ww-logout
+router.post('/ww-logout', function(req, res, next) {
+    req.session.user = null;
+    res.status('200').send('logout successfully!');
+});
+
+// TODO: to be removed ......................... testing only .................................
+// GET: http(s)://host:port/login/testingUsers
+router.get('/testingUsers', function(req, res, next) {
+    UserDocuments.find({testingAcc: true}).exec(function (err, users) {
+        if(err) {
+            console.log(err);
+            next(err);
+        } else {
+            if(!users) {
+                res.status('404');
+                res.send('no users!');
+            } else {
+                var result = [];
+                for(var i=0;i<users.length;i++) {
+                    result.push({
+                        userId: users[i].userId,
+                        nickName: users[i].nickName
+                    });
+                    users[i].userPassword = undefined;
+                }
+                res.send(result);
+            }
+        }
+    });
+});
+// TODO: to be removed ......................... testing only .................................
+
 routerBase.initErrorHandle(router);
 
 module.exports = router;

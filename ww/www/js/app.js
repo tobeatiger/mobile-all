@@ -177,11 +177,11 @@
                     },
                     '测试服务器输入',
                     ['算了', '好的'],
-                    //'192.168.1.104'
+                    //'192.168.1.107'
                     '118.89.30.45'
                 );
             } else {
-                www_root = 'http://118.89.30.45:3005/web';  // TODO: use prompt in testing mode
+                www_root = 'http://localhost:3005/web';  // TODO: use prompt in testing mode
                 if(www_root == '.') { //testing only  // TODO: use prompt in testing mode
                     requirejs.config({
                         paths: {

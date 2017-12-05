@@ -31,33 +31,6 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
     console.log('Mongo connected!');
-    //var jim = new UserDocuments({
-    //    userName: 'Jim YI',
-    //    userId: '43425307',
-    //    email: 'tobeatiger@126.com',
-    //    userPassword: '$2a$10$Z5/GkIDTq8MrwXSJDCZUWevejHCRly4SsMDYdgdTfLWYkNq5j3bfK',
-    //    photoURL: ''
-    //});
-    //jim.save(function (err) {
-    //    if(err) {
-    //        console.log(err);
-    //    } else {
-    //        console.log('saved!');
-    //    }
-    //});
-    //var borry = new UserDocuments({
-    //    userName: 'Borry Huang',
-    //    userId: '43310547',
-    //    userPassword: '$2a$10$Z5/GkIDTq8MrwXSJDCZUWevejHCRly4SsMDYdgdTfLWYkNq5j3bfK',
-    //    photoURL: ''
-    //});
-    //borry.save(function (err) {
-    //    if(err) {
-    //        console.log(err);
-    //    } else {
-    //        console.log('saved!');
-    //    }
-    //});
 });
 
 module.exports = {

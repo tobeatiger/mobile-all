@@ -20,7 +20,21 @@ define([], function () {
                     password: password
                 }
             });
-        }
+        };
+
+        this.logout = function () {
+            return $.ajax({
+                url: context_root + '/login/ww-logout',
+                type: 'POST'
+            });
+        };
+
+        this.getTestingUsers = function () {
+            return $.ajax({
+                url: context_root + '/login/testingUsers',
+                type: 'get'
+            });
+        };
 
     } ();
 

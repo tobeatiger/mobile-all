@@ -130,7 +130,7 @@ Comments.queryComments = function (params) {
             }
         }
 
-        query.sort(sorting).limit(countPerPage).populate('author').exec(function (err, docs) {
+        query.sort(sorting).limit(parseInt(countPerPage)).populate('author').exec(function (err, docs) {
             if(err) {
                 return next(err);
             }
@@ -142,7 +142,7 @@ Comments.queryComments = function (params) {
                     }
                     result.comments = docs.concat(subDocs);
                     getUserUpdated(req, next, function (user) {
-                        result.user = user;
+                        result.user = user || {};
                         result.user.userPassword = undefined;
                         res.send(result);
                     }, ['commentAgrees']);

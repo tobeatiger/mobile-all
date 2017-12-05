@@ -22,4 +22,65 @@ var UserDocuments = base.mongoose.model('User', {
     updateTime: {type: Date, default: Date.now}
 });
 
+//setTimeout(function () {
+
+    //var jim = new UserDocuments({
+    //    userName: 'Jim YI',
+    //    userId: '43425307',
+    //    email: 'tobeatiger@126.com',
+    //    userPassword: '$2a$10$Z5/GkIDTq8MrwXSJDCZUWevejHCRly4SsMDYdgdTfLWYkNq5j3bfK',
+    //    photoURL: ''
+    //});
+    //jim.save(function (err) {
+    //    if(err) {
+    //        console.log(err);
+    //    } else {
+    //        console.log('saved!');
+    //    }
+    //});
+    //var borry = new UserDocuments({
+    //    userName: 'Borry Huang',
+    //    userId: '43310547',
+    //    userPassword: '$2a$10$Z5/GkIDTq8MrwXSJDCZUWevejHCRly4SsMDYdgdTfLWYkNq5j3bfK',
+    //    photoURL: ''
+    //});
+    //borry.save(function (err) {
+    //    if(err) {
+    //        console.log(err);
+    //    } else {
+    //        console.log('saved!');
+    //    }
+    //});
+
+    //var niki = new UserDocuments({
+    //    userName: 'Niki Pan',
+    //    userId: 'niki.l.s.pan',
+    //    email: 'niki.l.s.pan@gmail.com',
+    //    userPassword: '$2a$10$Z5/GkIDTq8MrwXSJDCZUWevejHCRly4SsMDYdgdTfLWYkNq5j3bfK',
+    //    photoURL: ''
+    //});
+    //niki.save(function (err) {
+    //    if(err) {
+    //        console.log(err);
+    //    } else {
+    //        console.log('saved!');
+    //    }
+    //});
+    //var hby = new UserDocuments({
+    //    userName: 'HBY',
+    //    userId: 'baiyue.huang',
+    //    email: 'baiyue.huang@126.com',
+    //    userPassword: '$2a$10$Z5/GkIDTq8MrwXSJDCZUWevejHCRly4SsMDYdgdTfLWYkNq5j3bfK',
+    //    photoURL: ''
+    //});
+    //hby.save(function (err) {
+    //    if(err) {
+    //        console.log(err);
+    //    } else {
+    //        console.log('saved!');
+    //    }
+    //});
+
+//}, 500);
+
 module.exports = UserDocuments;

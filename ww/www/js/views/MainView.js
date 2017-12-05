@@ -93,7 +93,27 @@ define(['text!templates/main-tpl.html',
 
             // 5. tab me - first render
             if(firstRenderView && id == _map.me.id) {
-
+                $('#pls-login-btn').click(function () {
+                    $('#logout_btn').click();
+                });
+                $('#logout_btn').click(function () {
+                    window.loginService.logout().done(function () {
+                        $('#pls-login-btn').show();
+                        require(['ViewController'], function (_vctrl) {
+                            delete window.user;
+                            _vctrl.switchView('login');
+                        });
+                    });
+                });
+            }
+            if (id == _map.me.id) {
+                if(window.user) {
+                    $('#logout_btn').show();
+                    $('#pls-login-btn').hide().parent().find('span').text(window.user.nickName).show();
+                } else {
+                    $('#logout_btn').hide();
+                    $('#pls-login-btn').show().parent().find('span').hide();
+                }
             }
         };
         
